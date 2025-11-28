@@ -11,7 +11,7 @@ public partial class Books
 
     public string? Authors { get; set; }
 
-    public int? Series { get; set; }
+    public decimal? Series { get; set; }
 
     public string? Ids { get; set; }
 
