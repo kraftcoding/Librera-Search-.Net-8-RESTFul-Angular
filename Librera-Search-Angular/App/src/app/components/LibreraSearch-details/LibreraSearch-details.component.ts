@@ -12,9 +12,18 @@ export class LibreraSearchDetailsComponent implements OnInit {
   @Input() viewMode = false;
 
   @Input() currentLibreraSearch: LibreraSearch = {
-    title: '',
-    description: '',
-    published: false
+    id : '',
+    modified :  '',
+    title :  '',
+    authors:  '',
+    series:  0,
+    ids:  '',
+    published:  new Date(),
+    publisher:  '',
+    languages:  '',
+    tags:  '',
+    formats:  '',
+    path:  ''
   };
 
   message = '';
@@ -43,10 +52,19 @@ export class LibreraSearchDetailsComponent implements OnInit {
   }
 
   updatePublished(status: boolean): void {
-    const data = {
-      title: this.currentLibreraSearch.title,
-      description: this.currentLibreraSearch.description,
-      published: status
+    const data = {   
+      id : this.currentLibreraSearch.id,
+      modified :  this.currentLibreraSearch.modified,
+      Title :  this.currentLibreraSearch.title,
+      Authors:  this.currentLibreraSearch.authors,
+      Series:  this.currentLibreraSearch.series,
+      Ids:  this.currentLibreraSearch.ids,
+      Published:  this.currentLibreraSearch.published,
+      Publisher:  this.currentLibreraSearch.publisher,
+      Languages:  this.currentLibreraSearch.languages,
+      Tags:  this.currentLibreraSearch.tags,
+      Formats:  this.currentLibreraSearch.formats,
+      Path:  this.currentLibreraSearch.path
     };
 
     this.message = '';
@@ -54,10 +72,10 @@ export class LibreraSearchDetailsComponent implements OnInit {
     this.LibreraSearchService.update(this.currentLibreraSearch.id, data).subscribe({
       next: (res) => {
         console.log(res);
-        this.currentLibreraSearch.published = status;
+        //this.currentLibreraSearch.published = status;
         this.message = res.message
           ? res.message
-          : 'The status was updated successfully!';
+          : 'The register was updated successfully!';
       },
       error: (e) => console.error(e)
     });

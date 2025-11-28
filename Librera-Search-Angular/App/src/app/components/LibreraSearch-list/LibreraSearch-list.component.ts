@@ -9,7 +9,7 @@ import { LibreraSearchService } from 'src/app/services/LibreraSearch.service';
 })
 export class LibreraSearchsListComponent implements OnInit {
   LibreraSearchs?: LibreraSearch[];
-  currentLibreraSearch: LibreraSearch = {};
+  currentLibreraSearch: LibreraSearch = {id: '', modified: '', title: ''  };
   currentIndex = -1;
   title = '';
 
@@ -31,7 +31,7 @@ export class LibreraSearchsListComponent implements OnInit {
 
   refreshList(): void {
     this.retrieveLibreraSearchs();
-    this.currentLibreraSearch = {};
+    this.currentLibreraSearch = {id: '', modified: '', title: ''  };
     this.currentIndex = -1;
   }
 
@@ -51,7 +51,7 @@ export class LibreraSearchsListComponent implements OnInit {
   }
 
   searchTitle(): void {
-    this.currentLibreraSearch = {};
+    this.currentLibreraSearch = {id: '', modified: '', title: ''  };
     this.currentIndex = -1;
 
     this.LibreraSearchService.findByTitle(this.title).subscribe({

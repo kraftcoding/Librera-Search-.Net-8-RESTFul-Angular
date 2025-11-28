@@ -5,12 +5,12 @@
       <label><strong>Title:</strong></label> {{ currentLibreraSearch.title }}
     </div>
     <div>
-      <label><strong>Description:</strong></label>
-      {{ currentLibreraSearch.description }}
+      <label><strong>Authors:</strong></label>
+      {{ currentLibreraSearch.authors }}
     </div>
     <div>
-      <label><strong>Status:</strong></label>
-      {{ currentLibreraSearch.published ? "Published" : "Pending" }}
+      <label><strong>Series:</strong></label>
+      {{ currentLibreraSearch.series }}
     </div>
 
     <a class="badge badge-warning"
@@ -40,22 +40,22 @@
         />
       </div>
       <div class="form-group">
-        <label for="description">Description</label>
+        <label for="description">Authors</label>
         <input
           type="text"
           class="form-control"
           id="description"
-          [(ngModel)]="currentLibreraSearch.description"
+          [(ngModel)]="currentLibreraSearch.authors"
           name="description"
         />
       </div>
 
       <div class="form-group">
-        <label><strong>Status:</strong></label>
-        {{ currentLibreraSearch.published ? "Published" : "Pending" }}
+        <label><strong>Series:</strong></label>
+        {{ currentLibreraSearch.series }}
       </div>
     </form>
-
+ <!--
     <button
       class="badge badge-primary mr-2"
       *ngIf="currentLibreraSearch.published"
@@ -70,7 +70,7 @@
     >
       Publish
     </button>
-
+  -->
     <button class="badge badge-danger mr-2" (click)="deleteLibreraSearch()">
       Delete
     </button>
@@ -87,6 +87,6 @@
 
   <div *ngIf="!currentLibreraSearch.id">
     <br />
-    <p>Cannot access this LibreraSearch...</p>
+    <p>Cannot access this Librera Search...</p>
   </div>
 </ng-template>
