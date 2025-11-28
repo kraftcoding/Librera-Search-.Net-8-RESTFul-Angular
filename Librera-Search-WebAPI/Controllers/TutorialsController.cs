@@ -1,4 +1,4 @@
-﻿using LibreraSearch.Model;
+﻿using ASP.NETCore.ArticlesWebAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using static System.Runtime.InteropServices.JavaScript.JSType;
@@ -8,42 +8,40 @@ namespace ASP.NETCore.ArticlesWebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController] 
-    public class LibreraSearchController : ControllerBase
+    public class TutorialsController : ControllerBase
     {
-        private readonly LibreraSearchEntities _context;
+        private readonly TutorialsManagementApiContext _context;
 
-        public LibreraSearchController(LibreraSearchEntities context)
+        public TutorialsController(TutorialsManagementApiContext context)
         {
             _context = context;
         }
 
-        /*
-
         [HttpGet]
-        public async Task<IEnumerable<Book>> Get()
+        public async Task<IEnumerable<Tutorial>> Get()
         {
-            return await _context.Books.ToListAsync<Book>();
+            return await _context.Tutorial.ToListAsync<Tutorial>();
         }
 
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
-        public async Task<IActionResult> Create(Book Book)
+        public async Task<IActionResult> Create(Tutorial Tutorial)
         {
-            await _context.Books.AddAsync(Book);
+            await _context.Tutorial.AddAsync(Tutorial);
             await _context.SaveChangesAsync();
-            return CreatedAtAction(nameof(GetById), new { id = Book.id }, Book);
+            return CreatedAtAction(nameof(GetById), new { id = Tutorial.id }, Tutorial);
         }
 
         [HttpGet("id")]
-        [ProducesResponseType(typeof(Book), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(Tutorial), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetById(int id)
         {
-            var user = await _context.Books.FindAsync(id);
+            var user = await _context.Tutorial.FindAsync(id);
             return user == null ? NotFound() : Ok(user);
         }
 
-        
+        /*
         [HttpGet]
         public async Task<IEnumerable<Profile>> Get()
         {
@@ -88,7 +86,6 @@ namespace ASP.NETCore.ArticlesWebAPI.Controllers
             await _context.SaveChangesAsync();
             return NoContent();
         }
-
         */
     }
 }
