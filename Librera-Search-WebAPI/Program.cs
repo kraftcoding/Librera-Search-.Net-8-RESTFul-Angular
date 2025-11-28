@@ -1,4 +1,4 @@
-using ASP.NETCore.ArticlesWebAPI.Models;
+using LibreraSearch.WebAPI.Models;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,7 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // MOD -- Add DB Context
-builder.Services.AddDbContext<TutorialsManagementApiContext>(o => o.UseSqlServer(builder.Configuration.GetConnectionString("SqlServer")));
+builder.Services.AddDbContext<LibreraSearchApiContext>(o => o.UseSqlServer(builder.Configuration.GetConnectionString("LibreraSearchDBConnString")));
 
 var app = builder.Build();
 
