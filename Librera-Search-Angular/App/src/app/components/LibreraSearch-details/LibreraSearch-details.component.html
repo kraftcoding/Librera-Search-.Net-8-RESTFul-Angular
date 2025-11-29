@@ -29,6 +29,17 @@
   <div *ngIf="currentLibreraSearch.id" class="edit-form">
     <h4>LibreraSearch</h4>
     <form>
+
+      <div class="form-group">
+        <label><strong>Id:</strong></label>
+        {{ currentLibreraSearch.id }}
+      </div>
+
+      <div class="form-group">
+        <label><strong>Modified:</strong></label>
+        {{ currentLibreraSearch.modified }}
+      </div>
+
       <div class="form-group">
         <label for="title">Title</label>
         <input
@@ -39,6 +50,7 @@
           name="title"
         />
       </div>
+
       <div class="form-group">
         <label for="description">Authors</label>
         <input
@@ -51,15 +63,96 @@
       </div>
 
       <div class="form-group">
-        <label><strong>Series:</strong></label>
-        {{ currentLibreraSearch.series }}
+        <label for="series">Series</label>
+        <input
+          type="text"
+          class="form-control"
+          id="series"
+          [(ngModel)]="currentLibreraSearch.series"
+          name="series"
+        />
       </div>
 
       <div class="form-group">
-        <label><strong>Ids:</strong></label>
-        {{ currentLibreraSearch.ids }}
+        <label for="ids">Ids</label>
+        <input
+          type="text"
+          class="form-control"
+          id="ids"
+          [(ngModel)]="currentLibreraSearch.ids"
+          name="ids"
+        />
       </div>
+
+      <div class="form-group">
+        <label for="published">Published</label>
+        <input
+          type="date"
+          class="form-control"
+          id="published"
+          [(ngModel)]="currentLibreraSearch.published"
+          name="published"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="publisher">Publisher</label>
+        <input
+          type="text"
+          class="form-control"
+          id="publisher"
+          [(ngModel)]="currentLibreraSearch.publisher"
+          name="publisher"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="languages">Languages</label>
+        <input
+          type="text"
+          class="form-control"
+          id="languages"
+          [(ngModel)]="currentLibreraSearch.languages"
+          name="languages"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="tags">Tags</label>
+        <input
+          type="text"
+          class="form-control"
+          id="tags"
+          [(ngModel)]="currentLibreraSearch.tags"
+          name="tags"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="formats">Formats</label>
+        <input
+          type="text"
+          class="form-control"
+          id="formats"
+          [(ngModel)]="currentLibreraSearch.formats"
+          name="formats"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="path">Path</label>
+        <input
+          type="text"
+          class="form-control"
+          id="path"
+          [(ngModel)]="currentLibreraSearch.path"
+          name="path"
+        />
+      </div>
+
     </form>
+
+    
  <!--
     <button
       class="badge badge-primary mr-2"

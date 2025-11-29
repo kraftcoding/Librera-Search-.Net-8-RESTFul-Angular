@@ -8,6 +8,7 @@ const baseUrl = 'http://localhost:5000/api/LibreraSearch';
 @Injectable({
   providedIn: 'root',
 })
+
 export class LibreraSearchService {
   constructor(private http: HttpClient) {}
 

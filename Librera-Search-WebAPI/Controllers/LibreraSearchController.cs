@@ -59,7 +59,7 @@ namespace LibreraSearch.WebAPI.Controllers
             return NoContent();
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("{id}")]       
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> Delete(int id)
@@ -67,6 +67,16 @@ namespace LibreraSearch.WebAPI.Controllers
             var userToDelete = await _context.Books.FindAsync(id);
             if (userToDelete == null) return NotFound();
             _context.Books.Remove(userToDelete);
+            await _context.SaveChangesAsync();
+            return NoContent();
+        }
+        
+        [AcceptVerbs("DELETE")] //<-- To enable delete all
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> DeleteAll()
+        {            
+            _context.Books.RemoveRange(_context.Books); 
             await _context.SaveChangesAsync();
             return NoContent();
         }       

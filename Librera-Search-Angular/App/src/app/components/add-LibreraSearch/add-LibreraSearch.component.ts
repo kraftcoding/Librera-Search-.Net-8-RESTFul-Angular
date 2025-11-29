@@ -29,7 +29,7 @@ export class AddLibreraSearchComponent {
 
   saveLibreraSearch(): void {
     const data = {
-        id : this.LibreraSearch.id,
+        //id : this.LibreraSearch.id,
         modified :  this.LibreraSearch.modified,
         Title :  this.LibreraSearch.title,
         Authors:  this.LibreraSearch.authors,
