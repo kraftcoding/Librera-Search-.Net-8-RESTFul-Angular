@@ -7,6 +7,7 @@ import { LibreraSearchService } from 'src/app/services/LibreraSearch.service';
   templateUrl: './add-LibreraSearch.component.html',
   styleUrls: ['./add-LibreraSearch.component.css'],
 })
+
 export class AddLibreraSearchComponent {
   LibreraSearch: LibreraSearch = {
     id : '',

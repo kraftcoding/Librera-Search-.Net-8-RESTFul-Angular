@@ -41,38 +41,22 @@ namespace LibreraSearch.WebAPI.Controllers
             return user == null ? NotFound() : Ok(user);
         }
 
-        /*
-        [HttpGet]
-        public async Task<IEnumerable<Profile>> Get()
-        {
-            return await _context.Users.ToListAsync<Profile>();
-        }
-
-        [HttpGet("id")]
-        [ProducesResponseType(typeof(Profile), StatusCodes.Status200OK)]
+        [HttpGet("title")]
+        [ProducesResponseType(typeof(Books), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> GetById(int id)
+        public async Task<IActionResult> GetByTitle(string title)
         {
-            var user = await _context.Users.FindAsync(id);
-            return user == null ? NotFound() : Ok(user);
-        }
+            var bookList = await _context.Books.Where(a => a.Title.Contains(title)).ToListAsync();
+            return bookList == null ? NotFound() : Ok(bookList);
+        }              
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, Profile user)
+        public async Task<IActionResult> Update(int id, Books book)
         {
-            if (id != user.Id) return BadRequest();
-            _context.Entry(user).State = EntityState.Modified;
+            if (id != book.id) return BadRequest();
+            _context.Entry(book).State = EntityState.Modified;
             await _context.SaveChangesAsync();
             return NoContent();
-        }
-
-        [HttpPost]
-        [ProducesResponseType(StatusCodes.Status201Created)]
-        public async Task<IActionResult> Create(Profile user)
-        {
-            await _context.Users.AddAsync(user);
-            await _context.SaveChangesAsync();
-            return CreatedAtAction(nameof(GetById), new { id = user.Id }, user);
         }
 
         [HttpDelete("{id}")]
@@ -80,12 +64,11 @@ namespace LibreraSearch.WebAPI.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> Delete(int id)
         {
-            var userToDelete = await _context.Users.FindAsync(id);
+            var userToDelete = await _context.Books.FindAsync(id);
             if (userToDelete == null) return NotFound();
-            _context.Users.Remove(userToDelete);
+            _context.Books.Remove(userToDelete);
             await _context.SaveChangesAsync();
             return NoContent();
-        }
-        */
+        }       
     }
 }

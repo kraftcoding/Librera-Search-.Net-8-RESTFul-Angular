@@ -1,6 +1,6 @@
 <div *ngIf="viewMode; else editable">
   <div *ngIf="currentLibreraSearch.id">
-    <h4>LibreraSearch</h4>
+    <h4>Librera Search</h4>
     <div>
       <label><strong>Title:</strong></label> {{ currentLibreraSearch.title }}
     </div>
@@ -14,7 +14,7 @@
     </div>
 
     <a class="badge badge-warning"
-      routerLink="/LibreraSearchs/{{ currentLibreraSearch.id }}">
+      routerLink="/LibreraSearchs/id?id={{ currentLibreraSearch.id }}">
       Edit
     </a>
   </div>

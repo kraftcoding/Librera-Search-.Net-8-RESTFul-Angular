@@ -36,6 +36,6 @@ export class LibreraSearchService {
   }
 
   findByTitle(title: any): Observable<LibreraSearch[]> {
-    return this.http.get<LibreraSearch[]>(`${baseUrl}?title=${title}`);
+    return this.http.get<LibreraSearch[]>(`${baseUrl}/title?title=${title}`);
   }
 }
