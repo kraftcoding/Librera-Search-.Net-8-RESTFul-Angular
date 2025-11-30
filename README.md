@@ -2,12 +2,12 @@
 
 Angular 16 CRUD example to consume Rest API (add, delete, display, modify & search data) implementing Jwt-Bearer token-based authentication. Includes Visual Studio back-end API and SQL Data model projects.
 
-Application contains the next functionality:
+The application contains the next functionality:
 
-- Each register has id, title, description, published status.
+- Each register has id, title ,authors ,series, ids, published, publisher, languages, tags, formats, path
 - We can create, retrieve, update, delete registers.
 - There is a Search bar for finding registers by title.
-- JWT (JSON Web Token) format used for authentication
+- JWT (JSON Web Token) format used for authentication.
 
 ## Token-Based Authentication with Angular 16 and .Net 8 WebAPI
 
