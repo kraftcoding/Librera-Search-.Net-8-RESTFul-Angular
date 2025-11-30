@@ -27,6 +27,8 @@ This implementation provides a secure and efficient way to authenticate users, a
 
 ## Additional info
 
+If nmp install fails, use with --force
+
 Disable same origin policy in Chrome
 
 cd "C:\Program Files\Google\Chrome\Application"
