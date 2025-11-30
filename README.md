@@ -1,7 +1,5 @@
 # Librera-Search-.Net-8-RESTFul-Angular
 
-# Angular App and .NET 8 RESTful API with EntityFramework Core
-
 Angular 16 CRUD example to consume Rest API (add, delete, display, modify & search data) implementing Jwt-Bearer token-based authentication. Includes Visual Studio back-end API and SQL Data model projects.
 
 Application contains the next functionality:
