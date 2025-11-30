@@ -14,7 +14,7 @@
     </div>
 
     <a class="badge badge-warning"
-      routerLink="/LibreraSearchs/id?id={{ currentLibreraSearch.id }}">
+      routerLink="/LibreraSearch/id?id={{ currentLibreraSearch.id }}">
       Edit
     </a>
   </div>
@@ -90,7 +90,7 @@
           type="date"
           class="form-control"
           id="published"
-          [(ngModel)]="currentLibreraSearch.published"
+          [ngModel]="currentLibreraSearch.published | date:'yyyy-MM-dd'"         
           name="published"
         />
       </div>
