@@ -5,9 +5,10 @@ Angular 16 CRUD example to consume Rest API (add, delete, display, modify & sear
 The application contains the next functionality:
 
 - Each register has id, title ,authors ,series, ids, published, publisher, languages, tags, formats, path
-- We can create, retrieve, update, delete registers.
-- There is a Search bar for finding registers by title.
-- JWT (JSON Web Token) format used for authentication.
+- We can create, retrieve, update, delete registers
+- There is a Search bar for finding registers by title
+- JWT (JSON Web Token) format used for authentication
+- Policy-based authorization in End-Points
 
 ## Token-Based Authentication with Angular 16 and .Net 8 WebAPI
 
@@ -24,6 +25,12 @@ Key Components:
 - JWT (JSON Web Token): The token format used for authentication
 
 This implementation provides a secure and efficient way to authenticate users, allowing for seamless interaction between the frontend and backend.
+
+## Policy-based authorization in .NET
+
+In ASP.NET, policies are used to define requirements that must be met in order to give a user the authorization to access an endpoint.
+
+Within Web API projects you can use policies to guard and protect endpoints from unauthorized users that don't meet the criteria. Instead of writing the authorization logic in the endpoint itself, you can refactor this into a policy that is reusable across multiple endpoints. By extracting the authorization logic from the endpoint, you can make your code more clear and keep your endpoints concise.
 
 ## Additional info
 
