@@ -8,7 +8,7 @@ The application contains the next functionality:
 - We can create, retrieve, update, delete registers
 - There is a Search bar for finding registers by title
 - JWT (JSON Web Token) format used for authentication
-- Policy-based authorization in the endpoits
+- Policy-based authorization in the endpoints
 
 ## Token-Based Authentication with Angular 16 and .Net 8 WebAPI
 
